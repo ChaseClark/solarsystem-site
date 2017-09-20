@@ -1,0 +1,184 @@
+/*
+	Author	:	Christopher Robinson
+	Email		:	christopher@edg3.co.uk
+	Website	:	http://www.edg3.co.uk/
+*/
+* {
+	border:0;
+	margin:0;
+	padding:0;
+}
+
+/* general */
+a {
+	color:#777;
+	text-decoration:none;
+}
+
+a:hover {
+	color:#333;
+	text-decoration:none;
+}
+
+/* body */
+body {
+	background:#fafafa;
+	color:#555;
+	font:0.8em Arial, Helvetica, "bitstream vera sans", sans-serif;
+}
+
+/* header */
+#header {
+	height:80px;
+	margin:0 auto;
+	width:850px;
+}
+#header h1 {
+	color:#888;
+	font-size:300%;
+	letter-spacing:1px;
+	text-align:right;
+	padding:5px;
+	margin-bottom:-10px;
+}
+#header h2 {
+	color:#CCC;
+	font-size:200%;
+	letter-spacing:1px;
+	text-align:right;
+}
+
+/* navigation  added by Jim House, Jr. */
+#navigation {
+	background:#fafafa;
+	margin:0 auto;
+	width:850px;
+	height:40px;
+	list-style:none;
+	
+}
+
+#navigation ul { 
+	list-style: none;
+	position: relative;
+	display: inline-table;
+}
+
+
+#navigation li {
+	float:left;
+	width:170px;
+	list-style:none;
+}
+
+#navigation ul li:hover {
+		background: #333;
+}
+
+#navigation ul li:hover a {color: #fff;}
+
+#navigation ul li a {
+		display: block; padding: 5px 30px;
+		color: #ccc; text-decoration: none;
+			
+}
+
+#navigation a {
+	color:#555;
+	display:block;
+	line-height:35px;
+	text-align:center;
+	border: solid thin #999;
+	
+}
+
+#navigation ul:after {
+		content: ""; clear: both; display: block;
+	}
+
+#navigation ul ul {
+	display: none;
+}
+
+#navigation ul li:hover > ul {
+		display: block;
+	}
+
+
+#navigation ul ul {
+	background: #6e6e6e; 
+	position: absolute; top: 100%;
+}
+
+#navigation ul ul li {
+		float: none; 
+		position: relative;
+		width:170px;
+	}
+
+#navigation ul ul li a {
+			padding: 3px 0px;
+			color: #fff;
+		}
+		
+#navigation ul ul li a:hover {
+		background: #333;
+	}
+			
+
+#navigation ul ul ul {
+	position: absolute; left: 100%; top:0;
+}	
+
+
+/* content */
+#content {
+	height:auto;
+	margin:0 auto;
+	padding:0;
+	width:850px;
+}
+#content h1 {
+	border-bottom:1px dashed #999;
+	font-size:1.8em;
+	padding:20px 0 0;
+}
+
+
+#content p {
+	padding:20px 0;
+}
+
+
+
+/* footer */
+#footer {
+	border-top:1px solid #999; 
+	height:50px;
+	margin:0 auto;
+	padding:10px;
+	text-align:center;
+	width:751px;
+}
+
+/* Added by Larry Ullman: */
+.error {
+	font-weight: bold;
+	color: #C00;
+}
+
+
+/* Additions chase clark */
+#back-btn{
+	font-size: 3em;
+}
+
+#desc {
+	border: 2px solid black;
+}
+
+hr{
+	border-width: medium;
+    border-style: solid;
+	margin: 12px 0;
+}

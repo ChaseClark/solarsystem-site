@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<title>
+		<?php echo $page_title; ?>
+	</title>
+	<link rel="stylesheet" href="includes/style.css" type="text/css"/>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+</head>
+
+<body>
+	<div id="header">
+		<h1><a href="index.php">Our System</a></h1>
+		<h2><a href="index.php">Keep Looking Up!</a></h2>
+	</div>
+	<div id="navigation">
+		<ul>
+			<li><a href="view_planets.php">Planets</a>
+				<ul>
+					<?php
+						require_once ('./mysqli_connect.php');
+						$q1 = "SELECT * FROM planets ORDER BY planetID";
+						$r1 = @mysqli_query ($dbc,$q1);
+						while ( $row = mysqli_fetch_array($r1, MYSQLI_ASSOC))
+							{
+								echo '<li><a href="planet_info.php?PID='.$row['planetID'].'">' . $row['name'] . '</a></li>';
+							}
+							mysqli_free_result($r1);
+					?>
+				</ul>
+			</li>
+			<li><a href="view_dwarfplanets.php">Dwarf Planets</a>
+				<ul>
+					<?php
+						$q2 = "SELECT * FROM dwarf ORDER BY dwarfID";
+						$r2 = @mysqli_query ($dbc,$q2);
+						while ( $row = mysqli_fetch_array($r2, MYSQLI_ASSOC))
+							{
+								echo '<li><a href="#">' . $row['name'] . '</a></li>';
+							}
+							mysqli_free_result($r2);
+					?>
+				</ul>
+			</li>
+			<li><a href="view_moons.php">Moons</a></li>
+			<li><a href="view_asteroidtypes.php">Asteroids</a>
+				<ul>
+					<?php
+						$q3 = "SELECT * FROM asteroid_type ORDER BY typeID";
+						$r3 = @mysqli_query ($dbc,$q3);
+						while ( $row = mysqli_fetch_array($r3, MYSQLI_ASSOC))
+							{
+								echo '<li><a href="#">' . $row['type_name'] . '</a></li>';
+							}
+							mysqli_free_result($r3);
+					?>
+				</ul>
+			</li>
+			<li><a href="view_terms.php">Terms</a></li>
+		</ul>
+	</div>
+	<div id="content">
+		<!-- Start of the page-specific content. -->
+		<p><a href="index.php" id="back-btn">Go Back</a></p>
+</body>
+
+</html>
